@@ -36,7 +36,7 @@ else:
 print("hei käyttäjä, oletko mies vai nainen? ")
 mvn = input()
 if mvn == "mies" or "Mies":
-    print("Seuraavaksi anna sinun  hemoglobiiniarvosi: ")
+    print("Seuraavaksi anna sinun  hemoglobiiniarvosi yksikössä(g/l): ")
     hemog = float(input())
     if hemog < 134:
         print("hemoglobiiniarvosi on alhainen")
@@ -45,7 +45,7 @@ if mvn == "mies" or "Mies":
     elif hemog >195:
         print("hemoglobiiniarvosi on korkea")
 elif mvn == "Nainen" or "nainen":
-    print("Seuraavaksi anna sinun  hemoglobiiniarvosi: ")
+    print("Seuraavaksi anna sinun  hemoglobiiniarvosi yksikössä(g/l):")
     hemog = float(input())
     if hemog < 117:
         print("hemoglobiiniarvosi on alhainen")
