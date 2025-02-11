@@ -21,5 +21,5 @@ def tulos():
 print("kerro haluamasi lentokentän ICAO koodi: ")
 icao = input()
 
-dbHaku.execute(f"select name from airport where gps_code like '{icao}'")
+dbHaku.execute(f"select name,municipality from airport where gps_code like '{icao}'")
 print(tulos())

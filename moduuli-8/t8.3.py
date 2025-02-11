@@ -16,7 +16,7 @@ dbHaku = mydb.cursor()
 #tehdään databasesta lukeminen selvemmäksi:
 def tulos():
     ruma = dbHaku.fetchall()
-    #poistetaan kaikki muut paitsi a-z krijaimet, A-Z kirjaimet ja 0-9 numerot
+    #poistetaan kaikki muut paitsi a-z krijaimet, A-Z kirjaimet ja 0-9 numerot (^ tarkoittaa säilytä nämä)
     kaunis = re.sub(r"[^a-zA-Z0-9 ]", "",str(ruma))
     return kaunis
 
@@ -39,7 +39,6 @@ location2 = geolocator.geocode(str(kentta2))
 
 kentta1 = location1.latitude,location1.longitude
 kentta2 = location2.latitude,location2.longitude
-lopputulos = geodesic((kentta1),(kentta2))
+lopputulos = geodesic(kentta1, kentta2)
 
-
-print("lentokenttien etäisyys on: " + str(lopputulos))
+print(f"lentokenttien etäisyys on: {lopputulos}")
